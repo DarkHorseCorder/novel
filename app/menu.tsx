@@ -39,9 +39,47 @@ const appearances = [
     icon: <Moon className="h-4 w-4" />,
   },
 ];
+const paperBackgrounds = [
+  {
+    color: "White",
+    papercolor: "var(--novel-highlight-default)",
+  },
+  {
+    color: "Purple",
+    papercolor: "var(--novel-highlight-purple)",
+  },
+  {
+    color: "Red",
+    papercolor: "var(--novel-highlight-red)",
+  },
+  {
+    color: "Yellow",
+    papercolor: "var(--novel-highlight-yellow)",
+  },
+  {
+    color: "Blue",
+    papercolor: "var(--novel-highlight-blue)",
+  },
+  {
+    color: "Green",
+    papercolor: "var(--novel-highlight-green)",
+  },
+  {
+    color: "Orange",
+    papercolor: "var(--novel-highlight-orange)",
+  },
+  {
+    color: "Pink",
+    papercolor: "var(--novel-highlight-pink)",
+  },
+  {
+    color: "Gray",
+    papercolor: "var(--novel-highlight-gray)",
+  },
+]
 
 export default function Menu() {
-  const { font: currentFont, setFont } = useContext(AppContext);
+  const { font: currentFont, setFont, paperBackground: currentPaperBackground, setPaperBackground } = useContext(AppContext);
   const { theme: currentTheme, setTheme } = useTheme();
 
   return (
@@ -85,6 +123,30 @@ export default function Menu() {
                 <span>{theme}</span>
               </div>
               {currentTheme === theme.toLowerCase() && (
+                <Check className="h-4 w-4" />
+              )}
+            </button>
+          ))}
+        </div>
+        <div className="p-2">
+          <p className="p-2 text-xs font-medium text-stone-500">Paper Color</p>
+          {paperBackgrounds.map(({ papercolor, color }) => (
+            <button
+              key={color}
+              className="flex w-full items-center justify-between rounded px-2 py-1.5 text-sm text-stone-600 hover:bg-stone-100"
+              onClick={() => {
+                setPaperBackground(papercolor.toLowerCase());
+              }}
+            >
+              <div className="flex items-center space-x-2">
+                <div
+                  className="rounded-sm border border-stone-200 px-1 py-px font-medium w-6 h-6"
+                  style={{ backgroundColor: color }}
+                >
+                </div>
+                <span>{color}</span>
+              </div>
+              {currentPaperBackground === papercolor.toLowerCase() && (
                 <Check className="h-4 w-4" />
               )}
             </button>

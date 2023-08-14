@@ -11,9 +11,13 @@ import { cn } from "@/lib/utils";
 export const AppContext = createContext<{
   font: string;
   setFont: Dispatch<SetStateAction<string>>;
+  paperBackground: string;
+  setPaperBackground: Dispatch<SetStateAction<string>>;
 }>({
   font: "Default",
   setFont: () => {},
+  paperBackground: "var(--novel-highlight-default)",
+  setPaperBackground: () => {},
 });
 
 const ToasterProvider = () => {
@@ -25,6 +29,7 @@ const ToasterProvider = () => {
 
 export default function Providers({ children }: { children: ReactNode }) {
   const [font, setFont] = useLocalStorage<string>("novel__font", "Default");
+  const [paperBackground, setPaperBackground] = useLocalStorage<string>("var(--novel-highlight-default)", "White");
 
   return (
     <ThemeProvider
@@ -38,6 +43,8 @@ export default function Providers({ children }: { children: ReactNode }) {
         value={{
           font,
           setFont,
+          paperBackground,
+          setPaperBackground
         }}
       >
         <ToasterProvider />

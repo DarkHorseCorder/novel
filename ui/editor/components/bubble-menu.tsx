@@ -11,6 +11,7 @@ import {
 import { NodeSelector } from "./node-selector";
 import { ColorSelector } from "./color-selector";
 import { LinkSelector } from "./link-selector";
+import { AiReWriter } from "./ai-rewriter";
 import { cn } from "@/lib/utils";
 
 export interface BubbleMenuItem {
@@ -125,6 +126,9 @@ export const EditorBubbleMenu: FC<EditorBubbleMenuProps> = (props) => {
           setIsNodeSelectorOpen(false);
           setIsLinkSelectorOpen(false);
         }}
+      />
+      <AiReWriter 
+        editor={props.editor}
       />
     </BubbleMenu>
   );
