@@ -4,53 +4,22 @@ const DEFAULT_EDITOR_CONTENT = {
     {
       type: "heading",
       attrs: { level: 2 },
-      content: [{ type: "text", text: "Introducing Novel" }],
+      content: [{ type: "text", text: "GWCustom" }],
+      style: {textAlign: "center"}
     },
     {
       type: "paragraph",
       content: [
         {
           type: "text",
-          text: "Novel is a Notion-style WYSIWYG editor with AI-powered autocompletion. Built with ",
-        },
-        {
-          type: "text",
-          marks: [
-            {
-              type: "link",
-              attrs: {
-                href: "https://tiptap.dev/",
-                target: "_blank",
-                class:
-                  "text-stone-400 underline underline-offset-[3px] hover:text-stone-600 transition-colors cursor-pointer",
-              },
-            },
-          ],
-          text: "Tiptap",
-        },
-        { type: "text", text: " and " },
-        {
-          type: "text",
-          marks: [
-            {
-              type: "link",
-              attrs: {
-                href: "https://sdk.vercel.ai/docs",
-                target: "_blank",
-                class:
-                  "text-stone-400 underline underline-offset-[3px] hover:text-stone-600 transition-colors cursor-pointer text-stone-400 underline underline-offset-[3px] hover:text-stone-600 transition-colors cursor-pointer",
-              },
-            },
-          ],
-          text: "Vercel AI SDK",
-        },
-        { type: "text", text: "." },
+          text: "We build AI-powered workflows, custom web-applications, and provide full-service digital makeovers for SMEs in Europe.",
+        }
       ],
     },
     {
       type: "heading",
       attrs: { level: 3 },
-      content: [{ type: "text", text: "Features" }],
+      content: [{ type: "text", text: "We build:" }],
     },
     {
       type: "orderedList",
@@ -61,7 +30,7 @@ const DEFAULT_EDITOR_CONTENT = {
           content: [
             {
               type: "paragraph",
-              content: [{ type: "text", text: "Slash menu & bubble menu" }],
+              content: [{ type: "text", text: "Time saving automation tools" }],
             },
           ],
         },
@@ -70,14 +39,7 @@ const DEFAULT_EDITOR_CONTENT = {
           content: [
             {
               type: "paragraph",
-              content: [
-                { type: "text", text: "AI autocomplete (type " },
-                { type: "text", marks: [{ type: "code" }], text: "++" },
-                {
-                  type: "text",
-                  text: " to activate, or select from slash menu)",
-                },
-              ],
+              content: [{ type: "text", text: "User-facing web-applications" }],
             },
           ],
         },
@@ -86,116 +48,28 @@ const DEFAULT_EDITOR_CONTENT = {
           content: [
             {
               type: "paragraph",
-              content: [
-                {
-                  type: "text",
-                  text: "Image uploads (drag & drop / copy & paste, or select from slash menu)",
-                },
-              ],
+              content: [{ type: "text", text: "A.I. integrated workflows" }],
             },
           ],
         },
+        {
+          type: "listItem",
+          content: [
+            {
+              type: "paragraph",
+              content: [{ type: "text", text: "Amazing web-based software" }],
+            },
+          ],
+        }
       ],
     },
     {
       type: "image",
       attrs: {
-        src: "https://public.blob.vercel-storage.com/pJrjXbdONOnAeZAZ/banner-2wQk82qTwyVgvlhTW21GIkWgqPGD2C.png",
+        src: "https://media.licdn.com/dms/image/D560BAQF2bdUryR3OEg/company-logo_200_200/0/1691582372782?e=1700092800&v=beta&t=N3cMSOWDkFmUsIygctqCNYIB4IiLeBXA67nRKuBQLLQ",
         alt: "banner.png",
         title: "banner.png",
       },
-    },
-    { type: "horizontalRule" },
-    {
-      type: "heading",
-      attrs: { level: 3 },
-      content: [{ type: "text", text: "Learn more" }],
-    },
-    {
-      type: "taskList",
-      content: [
-        {
-          type: "taskItem",
-          attrs: { checked: false },
-          content: [
-            {
-              type: "paragraph",
-              content: [
-                { type: "text", text: "Check out the " },
-                {
-                  type: "text",
-                  marks: [
-                    {
-                      type: "link",
-                      attrs: {
-                        href: "https://twitter.com/steventey/status/1669762868416512000",
-                        target: "_blank",
-                        class:
-                          "text-stone-400 underline underline-offset-[3px] hover:text-stone-600 transition-colors cursor-pointer text-stone-400 underline underline-offset-[3px] hover:text-stone-600 transition-colors cursor-pointer",
-                      },
-                    },
-                  ],
-                  text: "launch video",
-                },
-              ],
-            },
-          ],
-        },
-        {
-          type: "taskItem",
-          attrs: { checked: false },
-          content: [
-            {
-              type: "paragraph",
-              content: [
-                { type: "text", text: "Star us on " },
-                {
-                  type: "text",
-                  marks: [
-                    {
-                      type: "link",
-                      attrs: {
-                        href: "https://github.com/steven-tey/novel",
-                        target: "_blank",
-                        class:
-                          "text-stone-400 underline underline-offset-[3px] hover:text-stone-600 transition-colors cursor-pointer",
-                      },
-                    },
-                  ],
-                  text: "GitHub",
-                },
-              ],
-            },
-          ],
-        },
-        {
-          type: "taskItem",
-          attrs: { checked: false },
-          content: [
-            {
-              type: "paragraph",
-              content: [
-                {
-                  type: "text",
-                  marks: [
-                    {
-                      type: "link",
-                      attrs: {
-                        href: "https://vercel.com/templates/next.js/novel",
-                        target: "_blank",
-                        class:
-                          "text-stone-400 underline underline-offset-[3px] hover:text-stone-600 transition-colors cursor-pointer",
-                      },
-                    },
-                  ],
-                  text: "Deploy your own",
-                },
-                { type: "text", text: " to Vercel" },
-              ],
-            },
-          ],
-        },
-      ],
     },
   ],
 };
