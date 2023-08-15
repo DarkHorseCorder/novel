@@ -6,11 +6,13 @@ export const ImageResizer = ({ editor }) => {
       ".ProseMirror-selectednode",
     ) as HTMLImageElement;
     if (imageInfo) {
+      console.log("================",imageInfo, editor)
       const selection = editor.state.selection;
       editor.commands.setImage({
         src: imageInfo.src,
         width: Number(imageInfo.style.width.replace("px", "")),
         height: Number(imageInfo.style.height.replace("px", "")),
+        style: 'opacity: 0.3'
       });
       editor.commands.setNodeSelection(selection.from);
     }
@@ -65,6 +67,7 @@ export const ImageResizer = ({ editor }) => {
         any) => {
           target!.style.transform = transform;
         }}
+
       />
     </>
   );
