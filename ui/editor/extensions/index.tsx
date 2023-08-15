@@ -14,6 +14,7 @@ import SlashCommand from "./slash-command";
 import { InputRule } from "@tiptap/core";
 import UploadImagesPlugin from "@/ui/editor/plugins/upload-images";
 import UpdatedImage from "./updated-image";
+import TextAlign from "@tiptap/extension-text-align";
 
 const CustomImage = TiptapImage.extend({
   addProseMirrorPlugins() {
@@ -137,4 +138,9 @@ export const TiptapExtensions = [
     html: false,
     transformCopiedText: true,
   }),
+  TextAlign.configure({
+    types: ['heading', 'paragraph'],
+    alignments: ['left', 'center', 'right', 'justify'],
+    defaultAlignment: 'left',
+  })
 ];

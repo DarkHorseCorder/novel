@@ -14,9 +14,7 @@ export const AiReWriter:FC<AiReWriterProps> = ({
     const Ai_rewrite = () => {
         const { from, to } = editor.state.selection;
         const selectedText = editor.state.doc.textBetween(from, to);
-        editor.chain()
-        .deleteRange({from:from , to:to})
-        .run();
+        editor.chain().deleteRange({from:from , to:to}).run();
         complete(selectedText,);
     }
 

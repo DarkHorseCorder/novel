@@ -14,6 +14,8 @@ import { ColorSelector } from "./color-selector";
 import { LinkSelector } from "./link-selector";
 import { AiReWriter } from "./ai-rewriter";
 import { TranslateSelector } from "./translate-selector";
+import { AlignSelector } from "./align-selector";
+import { CaseSensitiveSelector } from "./case-sensitive-selector";
 import { cn } from "@/lib/utils";
 
 export interface BubbleMenuItem {
@@ -81,6 +83,8 @@ export const EditorBubbleMenu: FC<EditorBubbleMenuProps> = (props) => {
         setIsColorSelectorOpen(false);
         setIsLinkSelectorOpen(false);
         setTranslateSeletorOpen(false);
+        setAlignSelectorOpen(false);
+        setCaseSensitiveOpen(false);
       },
     },
   };
@@ -89,6 +93,8 @@ export const EditorBubbleMenu: FC<EditorBubbleMenuProps> = (props) => {
   const [isColorSelectorOpen, setIsColorSelectorOpen] = useState(false);
   const [isLinkSelectorOpen, setIsLinkSelectorOpen] = useState(false);
   const [isTranslateSelectorOpen, setTranslateSeletorOpen] = useState(false);
+  const [isAlignSelectorOpen, setAlignSelectorOpen] = useState(false);
+  const [isCaseSensitiveOpen, setCaseSensitiveOpen] = useState(false);
 
   return (
     <BubbleMenu
@@ -103,6 +109,8 @@ export const EditorBubbleMenu: FC<EditorBubbleMenuProps> = (props) => {
           setIsColorSelectorOpen(false);
           setIsLinkSelectorOpen(false);
           setTranslateSeletorOpen(false);
+          setAlignSelectorOpen(false);
+          setCaseSensitiveOpen(false);
         }}
       />
       <LinkSelector
@@ -113,11 +121,12 @@ export const EditorBubbleMenu: FC<EditorBubbleMenuProps> = (props) => {
           setIsColorSelectorOpen(false);
           setIsNodeSelectorOpen(false);
           setTranslateSeletorOpen(false);
+          setAlignSelectorOpen(false);
+          setCaseSensitiveOpen(false);
         }}
       />
       <div className="flex">
         {items.map((item, index) => (
-          <>
             <button
               key={index}
               onClick={item.command}
@@ -129,14 +138,12 @@ export const EditorBubbleMenu: FC<EditorBubbleMenuProps> = (props) => {
                   "text-blue-500": item.isActive(),
                 })}
               />
-            </button>
-            <ReactTooltip
+              <ReactTooltip
               id={item.name}
               place="bottom"
               content={item.toottipMsg}
             />
-          </>
-          
+            </button>
         ))}
       </div>
       <ColorSelector
@@ -147,6 +154,32 @@ export const EditorBubbleMenu: FC<EditorBubbleMenuProps> = (props) => {
           setIsNodeSelectorOpen(false);
           setIsLinkSelectorOpen(false);
           setTranslateSeletorOpen(false);
+          setAlignSelectorOpen(false);
+          setCaseSensitiveOpen(false);
+        }}
+      />
+      <AlignSelector 
+        editor={props.editor}
+        isOpen={isAlignSelectorOpen}
+        setIsOpen={() => {
+          setAlignSelectorOpen(!isAlignSelectorOpen);
+          setIsColorSelectorOpen(false);
+          setIsNodeSelectorOpen(false);
+          setIsLinkSelectorOpen(false);
+          setTranslateSeletorOpen(false);
+          setCaseSensitiveOpen(false);
+        }}
+      />
+      <CaseSensitiveSelector
+        editor={props.editor}
+        isOpen={isCaseSensitiveOpen}
+        setIsOpen={() => {
+          setCaseSensitiveOpen(!isCaseSensitiveOpen);
+          setIsColorSelectorOpen(false);
+          setIsNodeSelectorOpen(false);
+          setIsLinkSelectorOpen(false);
+          setTranslateSeletorOpen(false);
+          setAlignSelectorOpen(false);
         }}
       />
       <AiReWriter 
@@ -160,6 +193,8 @@ export const EditorBubbleMenu: FC<EditorBubbleMenuProps> = (props) => {
           setIsColorSelectorOpen(false);
           setIsNodeSelectorOpen(false);
           setIsLinkSelectorOpen(false);
+          setAlignSelectorOpen(false);
+          setCaseSensitiveOpen(false);
         }}
       />
     </BubbleMenu>
