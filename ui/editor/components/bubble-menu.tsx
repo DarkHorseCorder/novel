@@ -12,6 +12,7 @@ import { NodeSelector } from "./node-selector";
 import { ColorSelector } from "./color-selector";
 import { LinkSelector } from "./link-selector";
 import { AiReWriter } from "./ai-rewriter";
+import { TranslateSelector } from "./translate-selector";
 import { cn } from "@/lib/utils";
 
 export interface BubbleMenuItem {
@@ -72,6 +73,7 @@ export const EditorBubbleMenu: FC<EditorBubbleMenuProps> = (props) => {
         setIsNodeSelectorOpen(false);
         setIsColorSelectorOpen(false);
         setIsLinkSelectorOpen(false);
+        setTranslateSeletorOpen(false);
       },
     },
   };
@@ -79,6 +81,7 @@ export const EditorBubbleMenu: FC<EditorBubbleMenuProps> = (props) => {
   const [isNodeSelectorOpen, setIsNodeSelectorOpen] = useState(false);
   const [isColorSelectorOpen, setIsColorSelectorOpen] = useState(false);
   const [isLinkSelectorOpen, setIsLinkSelectorOpen] = useState(false);
+  const [isTranslateSelectorOpen, setTranslateSeletorOpen] = useState(false);
 
   return (
     <BubbleMenu
@@ -92,6 +95,7 @@ export const EditorBubbleMenu: FC<EditorBubbleMenuProps> = (props) => {
           setIsNodeSelectorOpen(!isNodeSelectorOpen);
           setIsColorSelectorOpen(false);
           setIsLinkSelectorOpen(false);
+          setTranslateSeletorOpen(false);
         }}
       />
       <LinkSelector
@@ -101,6 +105,7 @@ export const EditorBubbleMenu: FC<EditorBubbleMenuProps> = (props) => {
           setIsLinkSelectorOpen(!isLinkSelectorOpen);
           setIsColorSelectorOpen(false);
           setIsNodeSelectorOpen(false);
+          setTranslateSeletorOpen(false);
         }}
       />
       <div className="flex">
@@ -125,10 +130,21 @@ export const EditorBubbleMenu: FC<EditorBubbleMenuProps> = (props) => {
           setIsColorSelectorOpen(!isColorSelectorOpen);
           setIsNodeSelectorOpen(false);
           setIsLinkSelectorOpen(false);
+          setTranslateSeletorOpen(false);
         }}
       />
       <AiReWriter 
         editor={props.editor}
+      />
+      <TranslateSelector 
+        editor={props.editor}
+        isOpen={isTranslateSelectorOpen}
+        setIsOpen={() => {
+          setTranslateSeletorOpen(!isTranslateSelectorOpen);
+          setIsColorSelectorOpen(false);
+          setIsNodeSelectorOpen(false);
+          setIsLinkSelectorOpen(false);
+        }}
       />
     </BubbleMenu>
   );

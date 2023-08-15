@@ -1,6 +1,6 @@
 import { cn, getUrlFromString } from "@/lib/utils";
 import { Editor } from "@tiptap/core";
-import { Check, Trash } from "lucide-react";
+import { Check, Trash, Link } from "lucide-react";
 import { Dispatch, FC, SetStateAction, useEffect, useRef } from "react";
 
 interface LinkSelectorProps {
@@ -29,14 +29,18 @@ export const LinkSelector: FC<LinkSelectorProps> = ({
           setIsOpen(!isOpen);
         }}
       >
-        <p className="text-base">↗</p>
+        {/* <p className="text-base">↗</p>
         <p
           className={cn("underline decoration-stone-400 underline-offset-4", {
             "text-blue-500": editor.isActive("link"),
           })}
         >
           Link
-        </p>
+        </p> */}
+        <Link className={cn("h-4 w-4", {
+          "text-blue-500": editor.isActive("link"),
+          })} 
+        />
       </button>
       {isOpen && (
         <form
