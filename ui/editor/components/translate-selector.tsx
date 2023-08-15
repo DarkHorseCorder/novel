@@ -22,7 +22,67 @@ const LANGUAGES: TranslateMenuItem[] = [
     {
         language: "Japanese",
         langcode: "ja"
-    }
+    },
+    {
+        language: "日本語",
+        langcode: "ja",
+    },
+    {
+        language: "Español",
+        langcode: "es",
+    },
+    {
+        language: "Français",
+        langcode: "fr",
+    },
+    {
+        language: "Deutsch",
+        langcode: "de",
+    },
+    {
+        language: "Italiano",
+        langcode: "it",
+    },
+    {
+        language: "中文",
+        langcode: "zh",
+    },
+    {
+        language: "Русский",
+        langcode: "ru",
+    },
+    {
+        language: "Português",
+        langcode: "pt",
+    },
+    {
+        language: "Nederlands",
+        langcode: "nl",
+    },
+    {
+        language: "العربية",
+        langcode: "ar",
+    },
+    {
+        language: "Türkçe",
+        langcode: "tr",
+    },
+    {
+        language: "ไทย",
+        langcode: "th",
+    },
+    {
+        language: "Polski",
+        langcode: "pl",
+    },
+    {
+        language: "Svenska",
+        langcode: "sv",
+    },
+    {
+        language: "Dansk",
+        langcode: "da",
+    },
 ];
 
 export const TranslateSelector: FC<TranslateSelectorProps> = ({

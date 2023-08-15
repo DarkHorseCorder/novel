@@ -7,6 +7,7 @@ import {
   StrikethroughIcon,
   CodeIcon,
 } from "lucide-react";
+import { Tooltip as ReactTooltip } from "react-tooltip";
 
 import { NodeSelector } from "./node-selector";
 import { ColorSelector } from "./color-selector";
@@ -20,6 +21,7 @@ export interface BubbleMenuItem {
   isActive: () => boolean;
   command: () => void;
   icon: typeof BoldIcon;
+  toottipMsg: string;
 }
 
 type EditorBubbleMenuProps = Omit<BubbleMenuProps, "children">;
@@ -31,30 +33,35 @@ export const EditorBubbleMenu: FC<EditorBubbleMenuProps> = (props) => {
       isActive: () => props.editor.isActive("bold"),
       command: () => props.editor.chain().focus().toggleBold().run(),
       icon: BoldIcon,
+      toottipMsg: "Ctrl + B",
     },
     {
       name: "italic",
       isActive: () => props.editor.isActive("italic"),
       command: () => props.editor.chain().focus().toggleItalic().run(),
       icon: ItalicIcon,
+      toottipMsg: "Ctrl + I",
     },
     {
       name: "underline",
       isActive: () => props.editor.isActive("underline"),
       command: () => props.editor.chain().focus().toggleUnderline().run(),
       icon: UnderlineIcon,
+      toottipMsg: "Ctrl + U",
     },
     {
       name: "strike",
       isActive: () => props.editor.isActive("strike"),
       command: () => props.editor.chain().focus().toggleStrike().run(),
       icon: StrikethroughIcon,
+      toottipMsg: "Ctrl + Shift + X",
     },
     {
       name: "code",
       isActive: () => props.editor.isActive("code"),
       command: () => props.editor.chain().focus().toggleCode().run(),
       icon: CodeIcon,
+      toottipMsg: "Ctrl + E",
     },
   ];
 
@@ -110,17 +117,26 @@ export const EditorBubbleMenu: FC<EditorBubbleMenuProps> = (props) => {
       />
       <div className="flex">
         {items.map((item, index) => (
-          <button
-            key={index}
-            onClick={item.command}
-            className="p-2 text-stone-600 hover:bg-stone-100 active:bg-stone-200"
-          >
-            <item.icon
-              className={cn("h-4 w-4", {
-                "text-blue-500": item.isActive(),
-              })}
+          <>
+            <button
+              key={index}
+              onClick={item.command}
+              className="p-2 text-stone-600 hover:bg-stone-100 active:bg-stone-200"
+              data-tooltip-id={item.name}
+            >
+              <item.icon
+                className={cn("h-4 w-4", {
+                  "text-blue-500": item.isActive(),
+                })}
+              />
+            </button>
+            <ReactTooltip
+              id={item.name}
+              place="bottom"
+              content={item.toottipMsg}
             />
-          </button>
+          </>
+          
         ))}
       </div>
       <ColorSelector
