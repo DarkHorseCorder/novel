@@ -4,7 +4,7 @@ const DEFAULT_EDITOR_CONTENT = {
     {
       type: "heading",
       attrs: { level: 2 },
-      content: [{ type: "text", text: "GWCustom" }],
+      content: [{ type: "text", text: "Welcome to my project" }],
       style: {textAlign: "center"}
     },
     {
@@ -12,14 +12,14 @@ const DEFAULT_EDITOR_CONTENT = {
       content: [
         {
           type: "text",
-          text: "We build AI-powered workflows, custom web-applications, and provide full-service digital makeovers for SMEs in Europe.",
+          text: "I've customized Novel using Next.js, TipTap, OpenAI and deployed with Vercel",
         }
       ],
     },
     {
       type: "heading",
       attrs: { level: 3 },
-      content: [{ type: "text", text: "We build:" }],
+      content: [{ type: "text", text: "Main features:" }],
     },
     {
       type: "orderedList",
@@ -30,7 +30,7 @@ const DEFAULT_EDITOR_CONTENT = {
           content: [
             {
               type: "paragraph",
-              content: [{ type: "text", text: "Time saving automation tools" }],
+              content: [{ type: "text", text: "Change Color of Text, text background, paper" }],
             },
           ],
         },
@@ -39,7 +39,7 @@ const DEFAULT_EDITOR_CONTENT = {
           content: [
             {
               type: "paragraph",
-              content: [{ type: "text", text: "User-facing web-applications" }],
+              content: [{ type: "text", text: "Change the style, font, case, align of the text" }],
             },
           ],
         },
@@ -48,7 +48,7 @@ const DEFAULT_EDITOR_CONTENT = {
           content: [
             {
               type: "paragraph",
-              content: [{ type: "text", text: "A.I. integrated workflows" }],
+              content: [{ type: "text", text: "Upload and resize image" }],
             },
           ],
         },
@@ -57,19 +57,11 @@ const DEFAULT_EDITOR_CONTENT = {
           content: [
             {
               type: "paragraph",
-              content: [{ type: "text", text: "Amazing web-based software" }],
+              content: [{ type: "text", text: "Re-write text using AI and translate text" }],
             },
           ],
         }
       ],
-    },
-    {
-      type: "image",
-      attrs: {
-        src: "https://media.licdn.com/dms/image/D560BAQF2bdUryR3OEg/company-logo_200_200/0/1691582372782?e=1700092800&v=beta&t=N3cMSOWDkFmUsIygctqCNYIB4IiLeBXA67nRKuBQLLQ",
-        alt: "banner.png",
-        title: "banner.png",
-      },
     },
   ],
 };
